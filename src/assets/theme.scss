@@ -308,32 +308,32 @@
   Liquid Variables
     - All liquid variables abstracted in one place, so linting can be run everywhere else
 =========================================================================================*/
-$settings-color-primary: #dfa160;
+$settings-color-primary: #eb4f47;
 
-$settings-color-header-text: #dfa160;
-$settings-color-primary-heading-text: #000000;
+$settings-color-header-text: #e1c9b4;
+$settings-color-primary-heading-text: #4a4a4a;
 $settings-color-primary-body-text: #4a4a4a;
 $settings-color-button-text: #ffffff;
 
 $settings-color-header: #fff;
-$settings-color-footer-bg: #dfa160;
-$settings-color-footer-text: #ffffff;
-$settings-color-main-bg: #ffffff;
-$settings-color-secondary-bg: #f7f7f7;
+$settings-color-footer-bg: #eae7e0;
+$settings-color-footer-text: #4a4a4a;
+$settings-color-main-bg: #faf9f6;
+$settings-color-secondary-bg: #f4f1ec;
 
-$settings-color-product-card: #ebebeb;
-$settings-color-form-elements: #f1f1f1;
-$settings-color-cart-flag: #b76b50;
-
-
+$settings-color-product-card: #fff;
+$settings-color-form-elements: #fff;
+$settings-color-cart-flag: #eb4f47;
 
 
 
 
 
-$font-stack-header: "Open Sans", "HelveticaNeue", "Helvetica Neue", sans-serif;
-$font-stack-header-weight: 700;
-$font-stack-body: "Open Sans", "HelveticaNeue", "Helvetica Neue", sans-serif;
+
+
+$font-stack-header: Baskerville MT, 'Baskerville Old Face', 'Hoefler Text', Garamond, 'Times New Roman', serif;
+$font-stack-header-weight: 400;
+$font-stack-body: 'Avenir', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $settings-font-size-base: 62.5%;
 
 /*============================================================================
@@ -462,7 +462,7 @@ $z-index-skip-to-content: 10000; // really high to be safe of app markup
 $z-index-modal: 15;
 
 /*================ SVG ================*/
-$svg-select-icon: #{'//cdn.shopify.com/s/files/1/1846/7909/t/9/assets/ico-select.svg?18042448609918849558'};
+$svg-select-icon: #{'//cdn.shopify.com/s/files/1/1846/7909/t/12/assets/ico-select.svg?17817250656032008314'};
 
 /*================ AJAX Cart ================*/
 $cart-mobile-width: 300px;

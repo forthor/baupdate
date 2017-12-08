@@ -78,11 +78,6 @@
           {% endfor %}
         </div>
       </div>
-      {% if blog.articles.size > 0 %}
-        <div class="card-list__spinner">
-          {% include 'spinner', position: 'top' %}
-        </div>
-      {% endif %}
     {% else %}
       {{ emptyBlog }}
     {% endunless %}
