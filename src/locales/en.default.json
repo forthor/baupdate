@@ -61,7 +61,7 @@
       "view_cart": "View cart"
     },
     "navigation": {
-      "toggle_sublinks": "Toggle {{ link_title }} sublinks"
+      "toggle_sublinks": "{{ link_title }} menu"
     }
   },
   "blogs": {

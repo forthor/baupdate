@@ -61,7 +61,7 @@
       "view_cart": "Einkaufswagen einsehen"
     },
     "navigation": {
-      "toggle_sublinks": "Umschalten {{ link_title }} Sublinks"
+      "toggle_sublinks": "Menü {{ link_title }}"
     }
   },
   "blogs": {

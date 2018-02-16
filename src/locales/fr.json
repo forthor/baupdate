@@ -61,7 +61,7 @@
       "view_cart": "Voir le panier"
     },
     "navigation": {
-      "toggle_sublinks": "Basculer les sous-liens de {{ link_title }}"
+      "toggle_sublinks": "Menu {{ link_title }}"
     }
   },
   "blogs": {

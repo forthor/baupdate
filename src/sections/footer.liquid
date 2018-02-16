@@ -81,7 +81,7 @@
       {% if section.settings.show_payment_icons %}
         <div class="site-footer__payment-icons flex-footer__item--one-third">
           {% unless shop.enabled_payment_types == empty %}
-            {%- assign payment_icons_available = 'amazon_payments,american_express,apple_pay,bitcoin,cirrus,dankort,diners_club,discover,dogecoin,dwolla,forbrugsforeningen,interac,jcb,litecoin,maestro,master,paypal,stripe,visa' | split: ',' -%}
+            {%- assign payment_icons_available = 'amazon_payments,american_express,apple_pay,bitcoin,cirrus,dankort,diners_club,discover,dogecoin,dwolla,forbrugsforeningen,interac,jcb,klarna,litecoin,maestro,master,paypal,stripe,shopify_pay,visa' | split: ',' -%}
             <ul class="payment-icons list--inline">
               {% for type in shop.enabled_payment_types %}
                 {% if payment_icons_available contains type %}
@@ -160,7 +160,8 @@
           "id": "link_list",
           "type": "link_list",
           "label": "Menu",
-          "default": "footer"
+          "default": "footer",
+          "info": "This menu won't show dropdown items"
         }
       ]
     }

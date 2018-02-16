@@ -135,11 +135,11 @@
   </header>
 
   <nav class="navigation supports-no-js critical-hide" data-section-id="{{ section.id }}" data-section-type="navigation" role="navigation" aria-hidden=true>
-    <div class="navigation__container page-width">
+    <div class="navigation__container">
       <ul class="navigation__links">
         {% for link in linklists[section.settings.primary_navigation].links%}
           {% assign child_list_handle = link.title | handleize %}
-          {% if menus[child_list_handle].links != blank %}
+          {% if link.links != blank %}
             <li class="navigation__link navigation__has-sublinks navigation__has-sublinks--collapsed navigation__entrance-animation">
               <button class="navigation__expand-sublinks" aria-expanded="{% if link.active %}true{% else %}false{% endif %}" tabindex="-1">
                 <span aria-hidden="true">{{ link.title }}</span>
@@ -148,9 +148,26 @@
               </button>
               <div class="navigation__sublinks-container">
                 <ul class="navigation__sublinks">
-                  {% for childlink in menus[child_list_handle].links %}
-                    <li class="navigation__sublink{% if childlink.active %} navigation__sublink--active{% endif %}">
-                      <a class="navigation__sublink-anchor" href="{{ childlink.url }}" tabindex="-1">{{ childlink.title | escape }}</a>
+                  {% for childlink in link.links %}
+                    <li class="navigation__sublink{% if childlink.links != blank %} navigation__has-sublinks navigation__has-sublinks--collapsed{% endif %}">
+                      {% if childlink.links != blank %}
+                        <button class="navigation__expand-sublinks navigation__expand-sublinks--third-level" aria-expanded="{% if link.active %}true{% else %}false{% endif %}" tabindex="-1">
+                          <span aria-hidden="true">{{ childlink.title }}</span>
+                          <span class="visually-hidden">{{ 'general.navigation.toggle_sublinks' | t: link_title: childlink.title }}</span>
+                          {% include 'icon-arrow-down' %}
+                        </button>
+                        <div class="navigation__sublinks-container">
+                          <ul class="navigation__sublinks navigation__sublinks--third-level">
+                            {% for grandchildlink in childlink.links %}
+                              <li class="navigation__sublink--third-level">
+                                <a href="{{ grandchildlink.url }}"{% if grandchildlink.active %} aria-current="page"{% endif %} tabindex="-1">{{ grandchildlink.title | escape }}</a>
+                              </li>
+                            {% endfor %}
+                          </ul>
+                        </div>
+                      {% else %}
+                        <a href="{{ childlink.url }}"{% if childlink.active %} aria-current="page"{% endif %} tabindex="-1">{{ childlink.title | escape }}</a>
+                      {% endif %}
                     </li>
                   {% endfor %}
                 </ul>
@@ -158,7 +175,7 @@
             </li>
           {% else %}
             <li class="navigation__link navigation__entrance-animation{% if link.active %} navigation__link--active{% endif %}">
-              <a class="navigation__link-anchor" href="{{ link.url }}" tabindex="-1">{{ link.title }}</a>
+              <a href="{{ link.url }}"{% if link.active %} aria-current="page"{% endif %} tabindex="-1">{{ link.title }}</a>
             </li>
           {% endif %}
         {% endfor %}
@@ -272,7 +289,8 @@
       "type": "link_list",
       "id": "secondary_navigation",
       "label": "Secondary navigation",
-      "default": "footer"
+      "default": "footer",
+      "info": "This menu won't show dropdown items"
     },
     {
       "type": "checkbox",

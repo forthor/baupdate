@@ -61,7 +61,7 @@
       "view_cart": "Ver carrinho"
     },
     "navigation": {
-      "toggle_sublinks": "Alternar {{ link_title }} ligações subsidiárias"
+      "toggle_sublinks": "Menu {{ link_title }}"
     }
   },
   "blogs": {

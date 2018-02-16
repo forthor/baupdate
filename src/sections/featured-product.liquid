@@ -33,7 +33,7 @@
                 {% assign parentFit = 'data-parent-fit="contain"' %}
 
                 <style>
-                  #FeaturedProduct-{{ section.id }} .featured-product__image.lazyloaded {
+                  #FeaturedProduct-{{ section.id }} .featured-product__image {
                     object-fit: contain;
                     font-family: "object-fit: contain";
                     background-color: {{ section.settings.background_color }};
@@ -44,7 +44,7 @@
                 {% assign parentFit = 'data-parent-fit="cover"' %}
 
                 <style>
-                  #FeaturedProduct-{{ section.id }} .featured-product__image.lazyloaded {
+                  #FeaturedProduct-{{ section.id }} .featured-product__image {
                     object-fit: cover;
                     font-family: "object-fit: cover";
                     background-color: {{ section.settings.background_color }};
@@ -54,11 +54,12 @@
 
               <img class="featured-product__image lazyload"
                   {% if featured_image == image %}src="{{ image | img_url: '300x'}}"{% endif %}
+                  {% if section.settings.image_size == "contain" %}data-parent-fit="contain"{% endif %}
+                  {% if section.settings.image_size == "cover" %}data-parent-fit="cover"{% endif %}
                   data-src="{{ img_url }}"
                   data-widths="[360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
                   data-aspectratio="{{ image.aspect_ratio }}"
                   data-sizes="auto"
-                  data-parent-fit="contain"
                   alt="{{ image.alt | escape }}"
                   data-variant-image>
             </div>

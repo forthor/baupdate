@@ -61,7 +61,7 @@
       "view_cart": "カートを見る"
     },
     "navigation": {
-      "toggle_sublinks": "{{ link_title }}を切り替える"
+      "toggle_sublinks": "メニュー{{ link_title }}"
     }
   },
   "blogs": {

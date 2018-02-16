@@ -2,13 +2,9 @@
 {% layout 'giftcard' %}
 
 <header class="giftcard-header text-center">
-  {% if settings.logo_use_image %}
-    <a href="{{ shop.url }}" class="giftcard__shop-link" itemprop="url">
-      <img class="logo" src="{{ 'logo.png' | asset_url }}" alt="{{ shop.name }}" itemprop="logo">
-    </a>
-  {% else %}
-    <h1 class="giftcard-header__shop-name h5">{{ shop.name }}</h1>
-  {% endif %}
+  <h1 class="giftcard-header__shop-name h5">
+    <a href="{{ shop.url }}" itemprop="url">{{ shop.name }}</a>
+  </h1>
   <div class="giftcard__shop-url">{{ shop.url | escape }}</div>
 </header>
 
